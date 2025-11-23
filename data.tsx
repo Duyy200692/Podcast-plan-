@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Episode } from './types';
 
@@ -257,20 +256,182 @@ export const episodes: Episode[] = [
     )
   },
   {
-    id: 'ep8',
+    id: 'modal-ep8',
     pillar: 'Trụ Cột 4: Cảm Quan (Sensory)',
     pillarColor: 'brand-coral',
     title: 'Tập 8: Chuyện hậu trường Giám khảo',
     description: 'Tiêu chí chấm thi; áp lực và những hạt cà phê "wow". Góc khai thác: Chuyện hậu trường (Behind the scenes).',
-    isClickable: false,
+    isClickable: true,
+    modalContent: (
+      <>
+        <p className="text-lg font-semibold text-brand-deep-blue mb-4">
+            "Tiêu chí chấm thi; áp lực và những hạt cà phê 'wow'. Góc khai thác: Chuyện hậu trường (Behind the scenes)."
+        </p>
+        <hr className="border-gray-200 my-4" />
+        <h4 className="text-xl font-bold text-brand-text mb-2">1. Bảng Điểm Quyền Lực (The Score Sheet)</h4>
+        <p className="mb-4 text-gray-600">
+            Chấm điểm không chỉ là "ngon" hay "dở". Đó là một quy trình phân tích khoa học dựa trên biểu mẫu của Hiệp hội Cà phê Đặc sản (SCA). Các giám khảo sẽ "mổ xẻ" từng khía cạnh:
+        </p>
+        <ul className="list-disc list-inside bg-gray-50 p-4 rounded-lg mb-4 text-sm space-y-2">
+            <li><strong>Hương thơm (Fragrance/Aroma):</strong> Mùi hương khi cà phê khô và ướt có phức tạp không? Có hương hoa, trái cây, hay chỉ mùi khét?</li>
+            <li><strong>Vị (Flavor):</strong> Đây là "linh hồn" của cà phê. Nó kể câu chuyện gì? Vị quả mọng, socola, hay các loại hạt?</li>
+            <li><strong>Độ chua (Acidity):</strong> Vị chua có sáng và dễ chịu như chanh vàng, hay gắt và khó chịu? Độ chua tốt tạo ra sự sống động.</li>
+            <li><strong>Thể chất (Body):</strong> Cảm giác cà phê trong miệng. Nó nhẹ như trà, hay dày và mượt như kem?</li>
+            <li><strong>Hậu vị (Aftertaste):</strong> Sau khi nuốt, vị ngon có còn đọng lại hay biến mất ngay lập tức?</li>
+        </ul>
+        <h4 className="text-xl font-bold text-brand-text mb-2">2. Áp Lực Vô Hình Sau Bàn Nếm</h4>
+        <p className="mb-4 text-gray-600">
+            Trở thành giám khảo là một vinh dự nhưng cũng đầy áp lực. Mr. Tuấn sẽ chia sẻ về "mặt tối" của công việc này:
+        </p>
+        <ul className="list-disc list-inside bg-gray-50 p-4 rounded-lg mb-4 text-sm space-y-2">
+             <li><strong>Mệt mỏi cảm quan (Sensory Fatigue):</strong> Sau khi nếm hàng chục mẫu, làm sao để vị giác vẫn giữ được sự nhạy bén và công tâm?</li>
+             <li><strong>Sự khách quan tuyệt đối:</strong> Phải gạt bỏ sở thích cá nhân. Một giám khảo có thể không thích vị chua, nhưng vẫn phải cho điểm cao nếu đó là vị chua chất lượng.</li>
+             <li><strong>Trách nhiệm:</strong> Một điểm số có thể quyết định giá trị của cả một lô hàng, ảnh hưởng đến sinh kế của người nông dân và danh tiếng nhà rang xay.</li>
+        </ul>
+        <h4 className="text-xl font-bold text-brand-text mb-2">3. Góc Hỏi Đáp Cùng Giám Khảo (Q&A)</h4>
+        <div className="space-y-4">
+            <div className="bg-blue-50 p-3 rounded-lg">
+                <p className="font-semibold text-brand-deep-blue">Hỏi: Làm sao để một người mới bắt đầu có thể tập nếm cà phê tại nhà?</p>
+                <p className="text-gray-700 mt-1 text-sm"><strong>Đáp:</strong> "Cách tốt nhất là so sánh. Bạn hãy mua 2-3 loại cà phê khác nhau (ví dụ: một loại sơ chế ướt, một loại sơ chế khô). Pha chúng cùng lúc và nếm song song. Đừng lo lắng về việc gọi tên hương vị chính xác, chỉ cần ghi lại cảm nhận: cái nào chua hơn, ngọt hơn, dày hơn. Lặp lại nhiều lần, vị giác của bạn sẽ tiến bộ."</p>
+            </div>
+            <div className="bg-blue-50 p-3 rounded-lg">
+                <p className="font-semibold text-brand-deep-blue">Hỏi: Điểm số có phải là tất cả không?</p>
+                <p className="text-gray-700 mt-1 text-sm"><strong>Đáp:</strong> "Điểm số là một thước đo chất lượng quan trọng, nhưng không phải là tất cả. Cà phê ngon nhất là cà phê hợp khẩu vị của bạn. Có những loại cà phê 88 điểm với vị chua rất sáng mà bạn có thể không thích, nhưng bạn lại mê mẩn một loại 85 điểm với hương socola đậm đà. Hãy tin vào vị giác của mình!"</p>
+            </div>
+        </div>
+         <blockquote className="mt-4 border-l-4 border-brand-coral pl-4 italic text-gray-700 bg-red-50 p-3 rounded-r-lg">
+            "Công việc của giám khảo là lắng nghe câu chuyện mà hạt cà phê kể, và dịch nó sang ngôn ngữ của điểm số một cách trung thực nhất."
+        </blockquote>
+      </>
+    )
   },
   {
-    id: 'ep9',
+    id: 'modal-ep9',
     pillar: 'Trụ Cột 5: Tầm Nhìn Tương Lai',
     pillarColor: 'brand-gold',
     title: 'Tập 9: Cà phê Việt trên bản đồ thế giới',
     description: 'Tương lai Fine Robusta & Arabica Việt Nam. Cơ hội và thách thức. Góc khai thác: Phân tích vĩ mô, tầm nhìn.',
-    isClickable: false,
-    span: 'md:col-span-2',
+    isClickable: true,
+    modalContent: (
+      <>
+        <p className="text-lg font-semibold text-brand-deep-blue mb-4">
+            "Tương lai Fine Robusta & Arabica Việt Nam. Cơ hội và thách thức. Góc khai thác: Phân tích vĩ mô, tầm nhìn."
+        </p>
+        <hr className="border-gray-200 my-4" />
+        <h4 className="text-xl font-bold text-brand-text mb-2">1. Cuộc Cách Mạng "Fine Robusta" - Lợi Thế Độc Quyền</h4>
+        <p className="mb-4 text-gray-600">
+            Thế giới từng mặc định Robusta là cà phê rẻ tiền, dùng cho cà phê hòa tan. Việt Nam đang dẫn đầu cuộc cách mạng thay đổi định kiến này. Fine Robusta được sơ chế cẩn thận như Arabica, mở ra một thế giới hương vị hoàn toàn mới: socola đen, các loại hạt, caramen đậm đà, với thể chất dày và ít chua, hoàn hảo cho espresso. Đây chính là "vũ khí bí mật" của Việt Nam.
+        </p>
+        <h4 className="text-xl font-bold text-brand-text mb-2">2. Sự Trỗi Dậy Của Arabica Việt Nam - Khẳng Định Chất Lượng</h4>
+        <p className="mb-4 text-gray-600">
+            Song song với Robusta, Arabica Việt Nam cũng đang có những bước tiến vượt bậc. Các vùng trồng như <strong>Cầu Đất (Lâm Đồng)</strong> hay <strong>Sơn La</strong> đang sản xuất ra những hạt cà phê với chất lượng đáng kinh ngạc, được thế giới công nhận. Với các phương pháp sơ chế tiên tiến (Honey, Anaerobic), Arabica Việt Nam đang dần tạo ra bản sắc riêng: cân bằng, ngọt ngào, với hương hoa và trái cây nhiệt đới tinh tế.
+        </p>
+        <h4 className="text-xl font-bold text-brand-text mb-2">3. Cơ Hội và Thách Thức</h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="bg-green-50 border-l-4 border-green-500 p-3 rounded-r-lg">
+                <h5 className="font-bold text-green-800">Cơ Hội Vàng</h5>
+                <ul className="list-disc list-inside text-sm text-gray-700 mt-1 space-y-1">
+                    <li>Nhu cầu cà phê đặc sản toàn cầu tăng.</li>
+                    <li>Xu hướng "single-origin" (dùng một nguồn gốc).</li>
+                    <li>Câu chuyện Farm-to-cup hấp dẫn.</li>
+                    <li>Biến đổi khí hậu làm giảm sản lượng ở nơi khác.</li>
+                </ul>
+            </div>
+            <div className="bg-red-50 border-l-4 border-red-500 p-3 rounded-r-lg">
+                <h5 className="font-bold text-red-800">Thách Thức Lớn</h5>
+                <ul className="list-disc list-inside text-sm text-gray-700 mt-1 space-y-1">
+                    <li>Định kiến về "cà phê giá rẻ".</li>
+                    <li>Marketing và xây dựng thương hiệu quốc gia.</li>
+                    <li>Đảm bảo chất lượng đồng đều.</li>
+                    <li>Cạnh tranh từ các quốc gia mới nổi khác.</li>
+                </ul>
+            </div>
+        </div>
+        <h4 className="text-xl font-bold text-brand-text mb-2">4. Khán Giả Khai Thác Được Gì?</h4>
+        <p className="mb-4 text-gray-600">Tương lai của cà phê Việt không chỉ là câu chuyện của chuyên gia, mà còn là của chính bạn:</p>
+         <div className="space-y-4">
+            <div className="bg-purple-50 p-3 rounded-lg">
+                <p className="font-semibold text-brand-purple">Dành cho Home Brewers:</p>
+                <p className="text-gray-700 mt-1 text-sm">Hãy mạnh dạn thử! Đừng chỉ tìm kiếm cà phê Ethiopia hay Colombia. Hãy hỏi các nhà rang xay về hạt Arabica Sơn La hay Fine Robusta từ Buôn Ma Thuột. Bạn sẽ khám phá ra những hương vị đáng tự hào ngay tại quê nhà và trở thành một phần của câu chuyện nâng tầm cà phê Việt.</p>
+            </div>
+            <div className="bg-coral-50 p-3 rounded-lg">
+                <p className="font-semibold text-brand-coral">Dành cho Industry Rookies:</p>
+                <p className="text-gray-700 mt-1 text-sm">Đây là một lĩnh vực màu mỡ. Ngành đang rất cần những Barista, Roaster, và chuyên gia Marketing hiểu về câu chuyện cà phê Việt để kể nó cho thế giới. Cơ hội để bạn tạo ra sự khác biệt và dấu ấn cá nhân là rất lớn.</p>
+            </div>
+        </div>
+        <blockquote className="mt-4 border-l-4 border-brand-gold pl-4 italic text-gray-700 bg-yellow-50 p-3 rounded-r-lg">
+            "Thế giới không cần thêm một bản sao của cà phê Colombia. Thế giới đang chờ đợi hương vị nguyên bản và độc đáo của chính Việt Nam."
+        </blockquote>
+      </>
+    )
+  },
+  {
+    id: 'modal-ep10',
+    pillar: 'Trụ Cột Đặc Biệt: Khoa Học & Thể Thao',
+    pillarColor: 'brand-green',
+    title: 'Tập 10: Caffeine & Hiệu Suất Thể Thao',
+    description: 'Khám phá cơ sở khoa học đằng sau việc sử dụng caffeine để tối ưu hóa hiệu suất vận động, đặc biệt trong các môn sức bền.',
+    isClickable: true,
+    modalContent: (
+      <>
+        <p className="text-lg font-semibold text-emerald-700 mb-4">
+            "Việc sử dụng caffeine để tăng cường hiệu suất tập luyện, đặc biệt là các môn sức bền như đua xe đạp đường dài, là có cơ sở khoa học mạnh mẽ và được cộng đồng khoa học thể thao công nhận."
+        </p>
+        <hr className="border-gray-200 my-4" />
+        <h4 className="text-xl font-bold text-brand-text mb-2">1. Bằng Chứng Khoa Học Về Caffeine và Hiệu Suất</h4>
+        <p className="mb-4 text-gray-600">
+          Các nghiên cứu, đặc biệt là các phân tích tổng hợp (meta-analysis), đã xác nhận tác dụng tăng lực (ergogenic) của caffeine. Tác dụng nổi bật nhất là cải thiện <strong>hiệu suất sức bền từ 2% đến 4%</strong> trong các bài tập như chạy marathon, đạp xe, bơi lội.
+        </p>
+        
+        <h4 className="text-xl font-bold text-brand-text mb-2">2. Cơ Chế Hoạt Động (Làm thế nào Caffeine hoạt động?)</h4>
+        <p className="mb-4 text-gray-600">
+            Cơ chế chính liên quan đến hệ thần kinh trung ương (CNS):
+        </p>
+        <ul className="list-disc list-inside bg-gray-50 p-4 rounded-lg mb-4 text-sm space-y-2">
+            <li><strong>Đối kháng Thụ thể Adenosine:</strong> Adenosine là chất gây mệt mỏi và buồn ngủ. Caffeine ngăn chặn adenosine, giúp tăng cường sự tỉnh táo và tập trung.</li>
+            <li><strong>Giảm Cảm Nhận Gắng Sức (RPE):</strong> Đây là tác dụng quan trọng nhất. Vận động viên cảm thấy bài tập đang thực hiện ít khó khăn hơn, cho phép họ duy trì cường độ cao hơn hoặc tập luyện lâu hơn.</li>
+            <li><strong>Giảm Cảm Giác Đau:</strong> Giúp vận động viên chịu đựng tốt hơn sự khó chịu khi tập luyện cường độ cao.</li>
+        </ul>
+
+        <h4 className="text-xl font-bold text-brand-text mb-2">3. Nghiên Cứu và Các Tổ Chức Uy Tín</h4>
+        <p className="mb-4 text-gray-600">
+            Các bằng chứng khoa học về caffeine đến từ nhiều trường đại học và tổ chức nghiên cứu thể thao hàng đầu. Các tạp chí uy tín như <strong>British Journal of Sports Medicine</strong> thường xuyên đăng tải các phân tích tổng hợp lớn về chủ đề này.
+        </p>
+        <div className="bg-gray-50 p-4 rounded-lg mb-4 border-l-4 border-gray-300">
+            <h5 className="font-bold text-brand-deep-blue mb-2">Tuyên bố Chính thức của Hiệp hội Dinh dưỡng Thể thao Quốc tế (ISSN)</h5>
+            <p className="text-sm text-gray-600 mb-3">ISSN là một trong những tổ chức uy tín nhất thế giới. Tuyên bố của họ đóng vai trò là kim chỉ nam cho các chuyên gia và vận động viên:</p>
+            <ul className="list-disc list-inside text-sm text-gray-700 space-y-2">
+                <li><strong>Hiệu quả được chứng minh:</strong> Caffeine tăng cường hiệu suất tập luyện, đặc biệt là sức bền aerobic (lợi ích từ trung bình đến lớn).</li>
+                <li><strong>Lợi ích đa dạng:</strong> Mang lại lợi ích nhỏ đến trung bình cho sức bền cơ bắp, tốc độ di chuyển, sức mạnh, khả năng chạy nước rút, nhảy và ném.</li>
+                <li><strong>Hiệu quả cao đối với Time-Trial:</strong> Rất hiệu quả cho các bài đua tính giờ, một yếu tố then chốt trong đua xe đạp.</li>
+                <li><strong>Liều lượng & Thời gian:</strong> Khuyến nghị chuẩn là 3–6 mg/kg, uống 60 phút trước khi tập.</li>
+                <li><strong>Caffeine từ cà phê:</strong> Cà phê cũng có hiệu quả, dù caffeine dạng viên (anhydrous) có thể nhỉnh hơn một chút trong một số trường hợp.</li>
+            </ul>
+            <p className="text-xs text-gray-500 mt-4">
+                <em>Các tuyên bố này là sự tổng hợp của nhiều nghiên cứu lớn từ các trường đại học uy tín như Đại học Memphis (Mỹ) và Đại học Hull (Anh).</em>
+            </p>
+        </div>
+
+        <h4 className="text-xl font-bold text-brand-text mb-2">💡 Lưu ý Thực Tiễn Cho Vận Động Viên</h4>
+        <div className="space-y-4">
+            <div className="bg-emerald-50 p-3 rounded-lg border-l-4 border-emerald-400">
+                <p className="font-semibold text-emerald-800">Liều lượng tối ưu:</p>
+                <p className="text-gray-700 mt-1 text-sm">Liều lượng được khuyến nghị là <strong>3-6 mg caffeine / kg trọng lượng cơ thể</strong>, uống khoảng 60 phút trước khi tập. Liều cao hơn (trên 9 mg/kg) không mang lại lợi ích thêm và có thể tăng tác dụng phụ.</p>
+            </div>
+            <div className="bg-emerald-50 p-3 rounded-lg border-l-4 border-emerald-400">
+                <p className="font-semibold text-emerald-800">Phản ứng cá nhân:</p>
+                <p className="text-gray-700 mt-1 text-sm">Mỗi người phản ứng với caffeine khác nhau do yếu tố di truyền. Vận động viên cần thử nghiệm liều lượng trong quá trình tập luyện trước khi áp dụng vào thi đấu chính thức.</p>
+            </div>
+             <div className="bg-emerald-50 p-3 rounded-lg border-l-4 border-emerald-400">
+                <p className="font-semibold text-emerald-800">Tổ chức Chống Doping Thế giới (WADA):</p>
+                <p className="text-gray-700 mt-1 text-sm">Caffeine đã được <strong>loại khỏi danh sách chất cấm</strong> của WADA từ năm 2004, nhưng vẫn được theo dõi. Việc sử dụng trong ngưỡng khuyến nghị là hoàn toàn hợp lệ.</p>
+            </div>
+        </div>
+
+        <blockquote className="mt-6 border-l-4 border-emerald-500 pl-4 italic text-gray-700 bg-emerald-50 p-3 rounded-r-lg">
+            "Việc sử dụng caffeine trong các cuộc thi đạp xe đường dài là chiến lược được cộng đồng khoa học thể thao toàn cầu chứng minh và công nhận như một chất hỗ trợ tăng lực (ergogenic aid) hợp pháp, an toàn và hiệu quả."
+        </blockquote>
+      </>
+    )
   },
 ];

@@ -59,7 +59,7 @@ const App: React.FC = () => {
 
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mb-12">
                             <div className="bg-brand-deep-blue text-white p-6 rounded-lg shadow-md">
-                                <span className="text-5xl font-extrabold">9</span>
+                                <span className="text-5xl font-extrabold">10</span>
                                 <span className="block text-xl font-semibold mt-2">Tập Nội Dung</span>
                             </div>
                             <div className="bg-brand-purple text-white p-6 rounded-lg shadow-md">
@@ -111,13 +111,13 @@ const App: React.FC = () => {
                         
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-12">
                             <div>
-                                <h3 className="text-2xl font-bold text-brand-deep-blue mb-4">Phân Bổ Nội Dung Theo 5 Trụ Cột</h3>
-                                <p className="text-gray-700">9 tập của mùa đầu tiên được xây dựng có chiến lược xoay quanh 5 trụ cột nội dung chính, đảm bảo sự đa dạng và chiều sâu, từ câu chuyện cá nhân đến kiến thức chuyên môn sâu và tầm nhìn ngành.</p>
+                                <h3 className="text-2xl font-bold text-brand-deep-blue mb-4">Phân Bổ Nội Dung Theo 6 Trụ Cột</h3>
+                                <p className="text-gray-700">10 tập của mùa đầu tiên được xây dựng có chiến lược xoay quanh 5 trụ cột nội dung chính và 1 tập đặc biệt, đảm bảo sự đa dạng và chiều sâu, từ câu chuyện cá nhân đến kiến thức chuyên môn sâu và tầm nhìn ngành.</p>
                             </div>
                            <PillarChart />
                         </div>
 
-                        <h3 className="text-2xl font-bold text-brand-deep-blue mb-6 text-center">Danh Sách 9 Tập Chi Tiết</h3>
+                        <h3 className="text-2xl font-bold text-brand-deep-blue mb-6 text-center">Danh Sách 10 Tập Chi Tiết</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {episodes.map(ep => (
                                 <EpisodeCard key={ep.id} episode={ep} onCardClick={handleOpenModal} />

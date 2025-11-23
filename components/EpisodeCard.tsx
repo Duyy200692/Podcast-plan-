@@ -1,13 +1,13 @@
 
 import React from 'react';
-import { Episode } from '../types';
+import { Episode, PillarColor } from '../types';
 
 interface EpisodeCardProps {
     episode: Episode;
     onCardClick: (id: string) => void;
 }
 
-const colorVariants = {
+const colorVariants: Record<PillarColor, { border: string; text: string; bg: string; hoverBg: string; }> = {
     'brand-deep-blue': {
         border: 'border-brand-deep-blue',
         text: 'text-brand-deep-blue',
@@ -38,11 +38,17 @@ const colorVariants = {
         bg: 'bg-brand-gold',
         hoverBg: 'hover:bg-yellow-50',
     },
+    'brand-green': {
+        border: 'border-emerald-500',
+        text: 'text-emerald-600',
+        bg: 'bg-emerald-500',
+        hoverBg: 'hover:bg-emerald-50',
+    },
 };
 
 const EpisodeCard: React.FC<EpisodeCardProps> = ({ episode, onCardClick }) => {
     const { id, pillar, pillarColor, title, description, isClickable, span } = episode;
-    const colors = colorVariants[pillarColor as keyof typeof colorVariants] || colorVariants['brand-deep-blue'];
+    const colors = colorVariants[pillarColor] || colorVariants['brand-deep-blue'];
     
     const cardContent = (
         <>

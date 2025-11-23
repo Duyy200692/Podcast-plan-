@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Chart, DoughnutController, ArcElement, Tooltip, Legend, ChartOptions } from 'chart.js';
 
@@ -16,44 +15,40 @@ const PillarChart: React.FC = () => {
                     chartInstanceRef.current.destroy();
                 }
 
-                const wrapLabels = (label: string, maxWidth: number) => {
-                    const words = label.split(' ');
-                    let lines: string[] = [];
-                    let currentLine = '';
-                    words.forEach(word => {
-                        if ((currentLine + ' ' + word).trim().length > maxWidth) {
-                            lines.push(currentLine.trim());
-                            currentLine = word;
-                        } else {
-                            currentLine = (currentLine + ' ' + word).trim();
-                        }
-                    });
-                    lines.push(currentLine.trim());
-                    return lines;
-                };
-
-                const pillarLabelsRaw = [
+                // Full labels for tooltips to preserve information
+                const pillarLabelsFull = [
                     'Người Truyền Lửa (2 tập)',
                     'Farm to Cup (2 tập)',
                     'Rang Xay - Roasting (2 tập)',
                     'Cảm Quan - Sensory (2 tập)',
-                    'Tầm Nhìn - Future (1 tập)'
+                    'Tầm Nhìn - Future (1 tập)',
+                    'Khoa Học & Thể Thao (1 tập)',
                 ];
-                const pillarLabels = pillarLabelsRaw.map(l => wrapLabels(l, 16));
+
+                // Shorter labels for the legend to prevent overlapping
+                const pillarLabelsShort = [
+                    'Người Truyền Lửa (2)',
+                    'Farm to Cup (2)',
+                    'Rang Xay (2)',
+                    'Cảm Quan (2)',
+                    'Tầm Nhìn (1)',
+                    'Khoa Học & Thể Thao (1)',
+                ];
 
                 chartInstanceRef.current = new Chart(ctx, {
                     type: 'doughnut',
                     data: {
-                        labels: pillarLabels,
+                        labels: pillarLabelsShort, // Use short labels for display
                         datasets: [{
                             label: 'Số tập',
-                            data: [2, 2, 2, 2, 1],
+                            data: [2, 2, 2, 2, 1, 1],
                             backgroundColor: [
                                 '#003F5C',
                                 '#7A5195',
                                 '#BC5090',
                                 '#FF6361',
-                                '#FFA600'
+                                '#FFA600',
+                                '#10b981' // emerald-500
                             ],
                             borderColor: '#F8F9FA',
                             borderWidth: 3
@@ -75,11 +70,9 @@ const PillarChart: React.FC = () => {
                             tooltip: {
                                 callbacks: {
                                     title: function(tooltipItems) {
-                                        const label = tooltipItems[0].label;
-                                        if (Array.isArray(label)) {
-                                          return label.join(' ');
-                                        }
-                                        return label;
+                                        // On hover, show the full, descriptive label
+                                        const dataIndex = tooltipItems[0].dataIndex;
+                                        return pillarLabelsFull[dataIndex] || '';
                                     }
                                 }
                             }

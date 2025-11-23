@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Episode } from '../types';
+import { Episode, PillarColor } from '../types';
 
 interface ModalProps {
     isOpen: boolean;
@@ -9,16 +9,17 @@ interface ModalProps {
     children: React.ReactNode;
 }
 
-const headerColorVariants = {
+const headerColorVariants: Record<PillarColor, string> = {
     'brand-deep-blue': 'bg-brand-deep-blue',
     'brand-purple': 'bg-brand-purple',
     'brand-magenta': 'bg-brand-magenta',
     'brand-coral': 'bg-brand-coral',
     'brand-gold': 'bg-brand-gold',
+    'brand-green': 'bg-emerald-500',
 };
 
 const Modal: React.FC<ModalProps> = ({ isOpen, onClose, episode, children }) => {
-    const headerBg = headerColorVariants[episode.pillarColor as keyof typeof headerColorVariants] || 'bg-brand-deep-blue';
+    const headerBg = headerColorVariants[episode.pillarColor] || 'bg-brand-deep-blue';
     const modalClasses = `modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 p-4 ${isOpen ? 'active' : ''}`;
 
     const handleOverlayClick = (e: React.MouseEvent<HTMLDivElement>) => {
