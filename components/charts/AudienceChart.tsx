@@ -17,7 +17,12 @@ const AudienceChart: React.FC = () => {
                     chartInstanceRef.current.destroy();
                 }
 
-                const audienceLabels = ['Home Brewers', 'Industry Rookies', 'Agriculture Enthusiasts'];
+                const audienceLabels = [
+                    'Người Đam Mê & Khám Phá',
+                    'Người Quan Tâm Sức Khỏe & Vận Động',
+                    'Người Yêu Thiên Nhiên & Bền Vững',
+                    'Người Trong Ngành & Đại Sứ Văn Hóa'
+                ];
 
                 chartInstanceRef.current = new Chart(ctx, {
                     type: 'doughnut',
@@ -25,11 +30,12 @@ const AudienceChart: React.FC = () => {
                         labels: audienceLabels,
                         datasets: [{
                             label: 'Đối tượng khán giả',
-                            data: [33.3, 33.3, 33.3],
+                            data: [25, 25, 25, 25],
                             backgroundColor: [
                                 '#7A5195', // brand-purple
-                                '#FF6361', // brand-coral
-                                '#FFA600'  // brand-gold
+                                '#10b981', // brand-green (emerald-500)
+                                '#FFA600', // brand-gold
+                                '#FF6361'  // brand-coral
                             ],
                             borderColor: '#F8F9FA',
                             borderWidth: 3

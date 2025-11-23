@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useCallback } from 'react';
 import { episodes } from './data';
 import AudienceChart from './components/charts/AudienceChart';
@@ -39,7 +38,7 @@ const App: React.FC = () => {
             <div className="container mx-auto p-4 md:p-8 max-w-7xl">
 
                 <header className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-extrabold text-brand-deep-blue mb-4">Kế Hoạch Triển Khai Podcast</h1>
+                    <h1 className="text-4xl md:text-5xl font-extrabold text-brand-deep-blue mb-4">Kế Hoạch Triển Khai Podcast & Workshop</h1>
                     <p className="text-xl md:text-2xl font-semibold text-brand-purple">Chuyên Gia Cà Phê Amoka International (Mr. Tuấn)</p>
                     <p className="text-lg text-gray-600 mt-2">Trực quan hóa chiến lược nội dung và sản xuất.</p>
                 </header>
@@ -75,27 +74,34 @@ const App: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                             <div>
                                 <h3 className="text-2xl font-bold text-brand-deep-blue mb-4">Đối Tượng Khán Giả Mục Tiêu</h3>
-                                <p className="text-gray-700 mb-4">Podcast được thiết kế để thu hút ba nhóm khán giả chính, những người có chung niềm đam mê với cà phê nhưng ở các cấp độ tìm hiểu khác nhau:</p>
+                                <p className="text-gray-700 mb-4">Dựa trên các buổi workshop, podcast được mở rộng để phục vụ 4 nhóm khán giả đa dạng, mỗi nhóm có một mối quan tâm riêng nhưng cùng chung tình yêu với cà phê Việt:</p>
                                 <ul className="space-y-3">
                                     <li className="flex items-start">
                                         <span className="text-brand-purple font-bold text-xl mr-3">●</span>
                                         <div>
-                                            <strong className="text-brand-purple">Home Brewers:</strong>
-                                            <span className="text-gray-600"> Người yêu cà phê muốn tìm hiểu sâu hơn để thưởng thức tại gia.</span>
+                                            <strong className="text-brand-purple">Người Đam Mê & Khám Phá:</strong>
+                                            <span className="text-gray-600"> Gồm các "Home Brewers" và người yêu nông sản, họ muốn tìm hiểu sâu về hương vị và câu chuyện đằng sau hạt cà phê.</span>
                                         </div>
                                     </li>
                                     <li className="flex items-start">
-                                        <span className="text-brand-coral font-bold text-xl mr-3">●</span>
+                                        <span className="text-emerald-500 font-bold text-xl mr-3">●</span>
                                         <div>
-                                            <strong className="text-brand-coral">Industry Rookies:</strong>
-                                            <span className="text-gray-600"> Các bạn trẻ (Barista, Roaster) muốn dấn thân vào ngành F&B chuyên nghiệp.</span>
+                                            <strong className="text-emerald-600">Người Quan Tâm Sức Khỏe & Vận Động:</strong>
+                                            <span className="text-gray-600"> Gồm các vận động viên, người tập gym và chuyên gia y tế, tìm đến cà phê như một công cụ hỗ trợ hiệu suất.</span>
                                         </div>
                                     </li>
                                     <li className="flex items-start">
                                         <span className="text-brand-gold font-bold text-xl mr-3">●</span>
                                         <div>
-                                            <strong className="text-brand-gold">Agriculture Enthusiasts:</strong>
-                                            <span className="text-gray-600"> Người quan tâm đến nông sản Việt Nam chất lượng cao.</span>
+                                            <strong className="text-brand-gold">Người Yêu Thiên Nhiên & Bền Vững:</strong>
+                                            <span className="text-gray-600"> Quan tâm đến quy trình canh tác hữu cơ, lối sống gần gũi thiên nhiên và sự phát triển bền vững của vùng trồng.</span>
+                                        </div>
+                                    </li>
+                                    <li className="flex items-start">
+                                        <span className="text-brand-coral font-bold text-xl mr-3">●</span>
+                                        <div>
+                                            <strong className="text-brand-coral">Người Trong Ngành & Đại Sứ Văn Hóa:</strong>
+                                            <span className="text-gray-600"> Từ Barista trẻ đến những người có khát vọng đưa đặc sản Việt ra thế giới, xem cà phê là sự nghiệp và niềm tự hào dân tộc.</span>
                                         </div>
                                     </li>
                                 </ul>
@@ -122,6 +128,60 @@ const App: React.FC = () => {
                             {episodes.map(ep => (
                                 <EpisodeCard key={ep.id} episode={ep} onCardClick={handleOpenModal} />
                             ))}
+                        </div>
+                    </div>
+                </section>
+
+                <section id="experience" className="mb-16">
+                    <div className="bg-brand-deep-blue rounded-lg shadow-xl p-8 md:p-12 text-white overflow-hidden relative">
+                        <div className="absolute top-0 right-0 -mt-20 -mr-20 w-64 h-64 bg-brand-purple rounded-full opacity-10"></div>
+                        <div className="absolute bottom-0 left-0 -mb-24 -ml-12 w-72 h-72 bg-brand-coral rounded-full opacity-10"></div>
+
+                        <div className="relative z-10">
+                            <h2 className="text-3xl md:text-4xl font-extrabold text-brand-gold mb-3 text-center">Trải Nghiệm Độc Quyền</h2>
+                            <p className="text-xl font-semibold text-white mb-8 text-center">Hành Trình "Farm to Cup" Tại Nông Trại Amoka</p>
+                            
+                            <p className="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
+                                Một chuyến đi trọn vẹn để bạn hóa thân thành người nông dân, tự tay hái những trái cà phê chín mọng, tham gia vào quy trình sơ chế và thưởng thức cà phê tươi ngon nhất ngay tại vườn.
+                            </p>
+
+                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10 max-w-5xl mx-auto">
+                                <div className="flex items-start space-x-4">
+                                    <div className="text-4xl pt-1">🌱</div>
+                                    <div>
+                                        <h4 className="font-bold text-lg text-brand-gold">Hái Cà Phê Chín</h4>
+                                        <p className="text-gray-300 text-sm mt-1">Tự tay thu hoạch những trái cà phê đỏ mọng, chín ngọt dưới sự hướng dẫn của người nông dân.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start space-x-4">
+                                    <div className="text-4xl pt-1">⚙️</div>
+                                    <div>
+                                        <h4 className="font-bold text-lg text-brand-gold">Tìm Hiểu Sơ Chế</h4>
+                                        <p className="text-gray-300 text-sm mt-1">Khám phá bí mật đằng sau các phương pháp sơ chế ướt, khô, mật ong và cách chúng tạo ra hương vị đa dạng.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start space-x-4">
+                                    <div className="text-4xl pt-1">☕</div>
+                                    <div>
+                                        <h4 className="font-bold text-lg text-brand-gold">Thưởng Thức Tại Vườn</h4>
+                                        <p className="text-gray-300 text-sm mt-1">Nếm thử những ly cà phê tươi ngon nhất, được pha chế ngay tại nơi chúng được sinh ra.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start space-x-4">
+                                    <div className="text-4xl pt-1">🍽️</div>
+                                    <div>
+                                        <h4 className="font-bold text-lg text-brand-gold">Ẩm Thực Địa Phương</h4>
+                                        <p className="text-gray-300 text-sm mt-1">Thưởng thức bữa ăn tối ấm cúng với những đặc sản của vùng cao nguyên trong không khí trong lành.</p>
+                                    </div>
+                                </div>
+                                <div className="flex items-start space-x-4">
+                                    <div className="text-4xl pt-1">⛺</div>
+                                    <div>
+                                        <h4 className="font-bold text-lg text-brand-gold">Cắm Trại Qua Đêm</h4>
+                                        <p className="text-gray-300 text-sm mt-1">Đắm mình trong không gian yên tĩnh của núi rừng, quây quần bên lửa trại và ngắm bầu trời đầy sao.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -192,14 +252,46 @@ const App: React.FC = () => {
                         </div>
 
                         <div className="bg-brand-coral bg-opacity-10 border-l-4 border-brand-coral p-6 rounded-lg">
-                            <h3 className="text-2xl font-bold text-brand-coral mb-3">Chiến Thuật Kết Hợp Sự Kiện</h3>
-                            <p className="text-gray-700">Tung tập podcast có chủ đề liên quan để "làm nóng" không khí và cung cấp kiến thức nền cho khán giả trước khi sự kiện offline (workshop, cupping) diễn ra. <br/><strong>Ví dụ:</strong> Phát hành <strong>Tập 3 (Arabica Cầu Đất)</strong> trước Workshop ngày 22/11.</p>
+                            <h3 className="text-2xl font-bold text-brand-coral mb-2">Lộ Trình Sự Kiện Offline</h3>
+                            <p className="text-brand-deep-blue font-semibold mb-6">Đồng hành tổ chức bởi <span className="font-bold">revital coffee</span></p>
+
+                            <div className="space-y-6">
+                                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                                    <h4 className="font-bold text-brand-purple">Chủ đề 1: Nền Tảng & Nguồn Gốc (Sau khi phát hành Tập 1-4)</h4>
+                                    <p className="text-sm text-gray-700 mt-1">
+                                        <strong>Sự kiện:</strong> Workshop "Cupping & Thảo Luận: Hành Trình Hạt Cà Phê Việt".
+                                    </p>
+                                    <p className="text-xs text-gray-600 mt-1">
+                                        Nếm thử các mẫu cà phê từ Cầu Đất, thảo luận về câu chuyện của người nông dân và định hướng sự nghiệp trong ngành.
+                                    </p>
+                                </div>
+
+                                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                                    <h4 className="font-bold text-brand-magenta">Chủ đề 2: Khoa Học & Kỹ Thuật (Sau khi phát hành Tập 5-8)</h4>
+                                    <p className="text-sm text-gray-700 mt-1">
+                                        <strong>Sự kiện:</strong> Workshop "Chuyên Sâu: Từ Rang Xay Đến Cảm Quan Chuyên Nghiệp".
+                                    </p>
+                                    <p className="text-xs text-gray-600 mt-1">
+                                        Thực hành các kỹ thuật cupping, tìm hiểu về các profile rang khác nhau và lắng nghe chia sẻ từ các giám khảo.
+                                    </p>
+                                </div>
+
+                                <div className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                                    <h4 className="font-bold text-brand-gold">Chủ đề 3: Tầm Nhìn & Ứng Dụng (Sau khi phát hành Tập 9-10)</h4>
+                                    <p className="text-sm text-gray-700 mt-1">
+                                        <strong>Sự kiện:</strong> Talkshow "Tương Lai Cà Phê Việt & Lối Sống Năng Động".
+                                    </p>
+                                    <p className="text-xs text-gray-600 mt-1">
+                                        Bàn tròn về cơ hội cho cà phê Việt trên thị trường quốc tế và thảo luận về việc ứng dụng caffeine trong thể thao.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
 
                 <footer className="text-center text-sm text-gray-500 mt-12">
-                    <p>Infographic được tạo bởi Canvas Infographics | 2025</p>
+                    <p>Infographic được tạo bởi Duy Bùi</p>
                 </footer>
             </div>
             {activeEpisode && (
